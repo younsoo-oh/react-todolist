@@ -9,6 +9,12 @@ function TodoForm(props) {
       id: Math.floor(Math.random() * 10000),
       text: input,
     });
+
+    setInput("");
+  };
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
   };
 
   return (
@@ -19,8 +25,9 @@ function TodoForm(props) {
         value={input}
         name="text"
         className="todo-input"
+        onChange={handleChange}
       />
-      <button className="todo-button">Add Todo</button>
+      <button className="todo-button">할일 추가</button>
     </form>
   );
 }
